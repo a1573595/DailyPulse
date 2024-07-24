@@ -10,10 +10,22 @@ import SwiftUI
 import shared
 
 struct AboutScreen: View {
+    @Environment(\.dismiss)
+    private var dismiss
+    
     var body: some View {
         NavigationStack {
             AboutView()
                 .navigationTitle("About Device")
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Text("Done").bold()
+                        }
+                    }
+                }
         }
     }
 }

@@ -8,10 +8,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class ArticleViewModel : BaseViewModel() {
-    private val _articlesState: MutableStateFlow<ArticleUiState> = MutableStateFlow(ArticleUiState())
+    private val _articleUiState: MutableStateFlow<ArticleUiState> = MutableStateFlow(ArticleUiState())
 
-    val articlesState: StateFlow<ArticleUiState>
-        get() = _articlesState
+    val articleUiState: StateFlow<ArticleUiState>
+        get() = _articleUiState
 
     init {
         getArticles()
@@ -19,11 +19,11 @@ class ArticleViewModel : BaseViewModel() {
 
     private fun getArticles() {
         scope.launch {
-            _articlesState.emit(ArticleUiState())
+            _articleUiState.emit(ArticleUiState())
             delay(500)
-            _articlesState.emit(ArticleUiState(loading = false, list = mockArticleList))
+            _articleUiState.emit(ArticleUiState(isLoading = false, list = mockArticleList))
 //            val articles = repository.getArticles()
-//            _articlesState.value = ArticlesUiState(articles = articles)
+//            _articleUiState.value = ArticlesUiState(articles = articles)
         }
     }
 

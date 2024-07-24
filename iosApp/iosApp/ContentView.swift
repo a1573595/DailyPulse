@@ -2,8 +2,26 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
+    @State private var shouldOpenAbout = false
+    
 	var body: some View {
-        AboutScreen()
+//        AboutScreen()
+        
+        NavigationStack{
+            ArticleListScreen(viewModel: .init())
+                .toolbar {
+                    ToolbarItem {
+                        Button {
+                            shouldOpenAbout = true
+                        } label: {
+                            Label("About", systemImage: "info.circle").labelStyle(.titleAndIcon)
+                        }
+                        .popover(isPresented: $shouldOpenAbout) {
+                            AboutScreen()
+                        }
+                    }
+                }
+        }
     }
 }
 
