@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -139,8 +140,7 @@ fun ArticleItem(article: Article) {
         )
         Text(
             text = article.title,
-//            style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 22.sp)
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(

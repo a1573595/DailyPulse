@@ -2,6 +2,7 @@ package com.a1573595.dailypulse.article
 
 import com.a1573595.dailypulse.BaseViewModel
 import com.a1573595.dailypulse.model.Article
+import com.a1573595.dailypulse.network.HttpService
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,6 +14,8 @@ class ArticleViewModel : BaseViewModel() {
     val articleUiState: StateFlow<ArticleUiState>
         get() = _articleUiState
 
+    val useCase: ArticleUseCase = ArticleUseCase(HttpService.instance.articleApi)
+
     init {
         getArticles()
     }
@@ -21,12 +24,12 @@ class ArticleViewModel : BaseViewModel() {
         scope.launch {
             _articleUiState.emit(ArticleUiState())
             delay(500)
-            _articleUiState.emit(ArticleUiState(isLoading = false, list = mockArticleList))
-//            val articles = repository.getArticles()
-//            _articleUiState.value = ArticlesUiState(articles = articles)
+//            _articleUiState.emit(ArticleUiState(isLoading = false, list = mockArticleList))
+            _articleUiState.emit(ArticleUiState(isLoading = false, list = useCase.getArticleList()))
         }
     }
 
+    /// todo test data
     private val mockArticleList = listOf(
         Article(
             "Stock market today: Live updates - CNBC",

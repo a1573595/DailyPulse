@@ -115,7 +115,7 @@ struct ArticleItemView: View {
                 }
             }
             
-            Text(article.title).font(.title).fontWeight(.bold)
+            Text(article.title).font(.title2).fontWeight(.bold)
             Text(article.desc)
             Text(article.date).frame(maxWidth: .infinity, alignment: .trailing).foregroundStyle(.gray)
         }
