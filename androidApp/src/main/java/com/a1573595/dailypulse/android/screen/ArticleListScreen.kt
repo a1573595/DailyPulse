@@ -32,11 +32,12 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.a1573595.dailypulse.article.ArticleViewModel
 import com.a1573595.dailypulse.model.Article
+import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ArticleListScreen(
-    articleViewModel: ArticleViewModel,
+    articleViewModel: ArticleViewModel = koinViewModel(),
     onAboutButtonClick: () -> Unit,
 ) {
     val articleUiState = articleViewModel.articleUiState.collectAsState()

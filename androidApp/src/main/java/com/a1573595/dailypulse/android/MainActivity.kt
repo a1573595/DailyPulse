@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                 ) {
 
                     val navController = rememberNavController()
-                    val articleViewModel: ArticleViewModel by viewModels()
+//                    val articleViewModel: ArticleViewModel by viewModels()
 
                     NavHost(
                         navController = navController,
@@ -46,7 +46,8 @@ class MainActivity : ComponentActivity() {
                             .fillMaxSize()
                     ) {
                         composable(DailyPulseScreen.ArtistList.name) {
-                            ArticleListScreen(articleViewModel = articleViewModel) {
+//                            ArticleListScreen(articleViewModel = articleViewModel) {
+                            ArticleListScreen {
                                 navController.navigate(DailyPulseScreen.About.name)
                             }
                         }

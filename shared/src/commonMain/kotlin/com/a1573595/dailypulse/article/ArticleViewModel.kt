@@ -8,13 +8,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class ArticleViewModel : BaseViewModel() {
+class ArticleViewModel(
+//    private val useCase: ArticleUseCase = ArticleUseCase(HttpService.instance.articleApi)
+    private val useCase: ArticleUseCase
+) : BaseViewModel() {
     private val _articleUiState: MutableStateFlow<ArticleUiState> = MutableStateFlow(ArticleUiState())
 
     val articleUiState: StateFlow<ArticleUiState>
         get() = _articleUiState
-
-    val useCase: ArticleUseCase = ArticleUseCase(HttpService.instance.articleApi)
 
     init {
         getArticles()

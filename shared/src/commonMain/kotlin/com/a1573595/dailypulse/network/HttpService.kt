@@ -20,5 +20,6 @@ class HttpService private constructor() {
         }
     }
 
-    val articleApi: ArticleApi = ArticleApiImpl(httpClient)
+    //    val articleApi: ArticleApi = ArticleApiImpl(httpClient)
+    val articleApi: ArticleApi = ArticleApi(httpClient)
 }
