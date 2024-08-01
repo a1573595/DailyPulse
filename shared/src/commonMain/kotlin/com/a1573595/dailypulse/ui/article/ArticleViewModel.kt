@@ -1,8 +1,7 @@
-package com.a1573595.dailypulse.article
+package com.a1573595.dailypulse.ui.article
 
-import com.a1573595.dailypulse.BaseViewModel
-import com.a1573595.dailypulse.model.Article
-import com.a1573595.dailypulse.network.HttpService
+import com.a1573595.dailypulse.ui.BaseViewModel
+import com.a1573595.dailypulse.data.model.Article
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

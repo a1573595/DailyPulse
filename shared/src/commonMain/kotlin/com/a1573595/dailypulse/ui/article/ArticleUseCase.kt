@@ -1,8 +1,8 @@
-package com.a1573595.dailypulse.article
+package com.a1573595.dailypulse.ui.article
 
-import com.a1573595.dailypulse.model.Article
-import com.a1573595.dailypulse.model.ArticleRaw
-import com.a1573595.dailypulse.network.ArticleApi
+import com.a1573595.dailypulse.data.model.Article
+import com.a1573595.dailypulse.data.model.ArticleRaw
+import com.a1573595.dailypulse.data.repository.ArticleRepository
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
@@ -11,8 +11,8 @@ import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.todayIn
 import kotlin.math.abs
 
-class ArticleUseCase(private val articleApi: ArticleApi) {
-    suspend fun getArticleList(): List<Article> = articleApi.getArticleList().map { e -> mapArticleRawToArticle(e) }
+class ArticleUseCase(private val repository: ArticleRepository) {
+    suspend fun getArticleList(): List<Article> = repository.getArticleRawList().map { e -> mapArticleRawToArticle(e) }
 
     private fun mapArticleRawToArticle(articleRaw: ArticleRaw): Article = Article(
         title = articleRaw.title,

@@ -1,4 +1,4 @@
-package com.a1573595.dailypulse
+package com.a1573595.dailypulse.ui
 
 import kotlinx.coroutines.CoroutineScope
 

@@ -1,6 +1,6 @@
-package com.a1573595.dailypulse.article
+package com.a1573595.dailypulse.ui.article
 
-import com.a1573595.dailypulse.model.Article
+import com.a1573595.dailypulse.data.model.Article
 
 data class ArticleUiState(
     val isLoading: Boolean = true,

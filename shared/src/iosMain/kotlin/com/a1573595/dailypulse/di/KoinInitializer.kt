@@ -1,6 +1,6 @@
 package com.a1573595.dailypulse.di
 
-import com.a1573595.dailypulse.article.ArticleViewModel
+import com.a1573595.dailypulse.ui.article.ArticleViewModel
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin

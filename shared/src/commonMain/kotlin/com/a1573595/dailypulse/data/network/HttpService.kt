@@ -1,4 +1,4 @@
-package com.a1573595.dailypulse.network
+package com.a1573595.dailypulse.data.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

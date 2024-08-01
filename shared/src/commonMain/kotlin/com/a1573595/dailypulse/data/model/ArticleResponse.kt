@@ -1,4 +1,4 @@
-package com.a1573595.dailypulse.model
+package com.a1573595.dailypulse.data.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

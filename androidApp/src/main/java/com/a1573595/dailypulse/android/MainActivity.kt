@@ -3,18 +3,15 @@ package com.a1573595.dailypulse.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.a1573595.dailypulse.Platform
 import com.a1573595.dailypulse.android.screen.AboutScreen
 import com.a1573595.dailypulse.android.screen.ArticleListScreen
-import com.a1573595.dailypulse.article.ArticleViewModel
 
 enum class DailyPulseScreen {
     ArtistList,
